@@ -111,18 +111,18 @@ public class MainActivity extends AppCompatActivity {
         Aruco.detectMarkers(mat,dictionary, corners, ids);
         Aruco.drawDetectedMarkers(mat,corners,ids);
 
-        TextView textView = findViewById(R.id.textView);
         int[] id = {0,0,0,0,0,0};
         for (int i = 0; i < 6; i++){
             id[i] = (int)(ids.get(i,0)[0]);
         }
+        TextView textView = findViewById(R.id.textView2);
         textView.setText(id[0]+","+id[1]+","+id[2]+","+id[3]+","+id[4]+","+id[5]);
 
         //轉為 Bitmap
-//        Bitmap resultBitmap = Bitmap.createBitmap(mat.cols(),mat.rows(), Bitmap.Config.ARGB_8888);
-//        Utils.matToBitmap(mat,resultBitmap);
-//        ImageView imageView = findViewById(R.id.qrCodeImageView);
-//        imageView.setImageBitmap(resultBitmap);
+        Bitmap resultBitmap = Bitmap.createBitmap(mat.cols(),mat.rows(), Bitmap.Config.ARGB_8888);
+        Utils.matToBitmap(mat,resultBitmap);
+        ImageView imageView = findViewById(R.id.qrCodeImageView);
+        imageView.setImageBitmap(resultBitmap);
     }
 
     void test(){
