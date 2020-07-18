@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         else{
             loaderCallbackInterface.onManagerConnected(LoaderCallbackInterface.SUCCESS);
         }
-        textView = findViewById(R.id.textView);
+        textView = findViewById(R.id.textView2);
         imageView = findViewById(R.id.imageView);
         test();
     }
@@ -119,6 +119,6 @@ public class MainActivity extends AppCompatActivity {
     }
     void test(){
         DownloadImageTask downloadImageTask = new DownloadImageTask();
-        downloadImageTask.execute("https://docs.opencv.org/trunk/singlemarkersrejected.jpg");
+        downloadImageTask.execute("https://docs.opencv.org/trunk/singlemarkersoriginal.jpg");
     }
 }
